@@ -1,0 +1,256 @@
+.comiis_seccheck {padding:0 10px}
+.comiis_seccheck .comiis_sec_code {border:none !important;padding:0;height:46px;line-height:46px}
+.comiis_seccheck .comiis_sec_code .sec_code_img, .comiis_seccheck .comiis_sec_code .comiis_px {margin:8px 0}
+.comiis_upbox {padding:6px 0 6px 10px}
+.comiis_post_imglist li {float:left;padding:6px 10px 6px 0;position:relative}
+.comiis_post_imglist li .del {position:absolute;top:-5px;left:-5px}
+.comiis_post_imglist li .del i {font-size:24px;background:#fff;border-radius:50%}
+.comiis_post_imglist li .p_img img {padding:2px;border-radius:2px}
+.comiis_post_imglist li.up_btn a {display:block;width:50px;height:50px;line-height:50px;padding:4px;border-radius:2px;border-style:dashed}
+.comiis_post_imglist li.up_btn a i {position:absolute;top:11px;left:5px;z-index:8;font-size:26px;width:50px;height:50px;line-height:50px;text-align:center}
+.comiis_post_imglist li.up_btn a input {position:absolute;top:11px;left:5px;height:50px;width:50px;z-index:10;opacity:0}
+.comiis_post_ico .comiis_gjsz {float:right;height:26px;line-height:26px;margin-top:1px;border-radius:3px;border:1px solid rgba(0,0,0,0.12)}
+.comiis_post_ico .comiis_gjsz a {margin-right:0;height:26px;line-height:26px;padding:0 7px}
+.comiis_post_ico .comiis_gjsz i {float:left;font-size:16px;margin-right:4px;line-height:28px}
+.comiis_tagbox {padding:10px 12px 5px;line-height:30px}
+.comiis_tagbox .tagbox {width:100%}
+.comiis_tagbox .tagbox a {display:inline-block;font-size:14px;margin-left:10px;padding:0 15px;text-align:center;border-radius:20px}
+.comiis_tagbox .tagbox th {width:100px;text-align:right}
+.comiis_tagbox .tagbox .comiis_px {font-size:14px}
+.comiis_tagbox p {margin-top:3px;text-align:center}
+.comiis_tag, .comiis_pictitle{position:relative}
+.comiis_tag:after{right:-2px;top:0;content: " ";display: block;position:absolute;width:6px;height:6px;z-index:2;pointer-events:none;background:#f00;border-radius:50%}
+.comiis_minipost_icot .comiis_gjsz {margin-top:3px}
+.comiis_minipost_icot .comiis_tag:after {right:2px}
+.comiis_pictitle span{right:-1px;top:-1px;display: block;position:absolute;padding:0 3px;height:14px;line-height:14px;text-align:center;font-size:12px;z-index:2;pointer-events:none;background:#f00;color:#fff;border-radius:2px;display:none}
+.tebie_poll_img {padding:12px}
+.tebie_poll_img img {width:100%;font-size:0;border-radius:2px}
+.comiis_post_sort li {font-size:16px}
+.comiis_post_sort .tebie_li {padding:10px 10px 10px 100px;position:relative}
+.comiis_post_sort li.tebie_lir {padding:10px 50px 10px 100px;position:relative}
+.comiis_post_sort li.tebie_lirs {padding:0 115px 10px 100px}
+.comiis_post_sort .tebie_li span, .comiis_post_sort li.tebie_lir span {width:90px}
+.post_sort .flx {width:100%;overflow:hidden}
+.post_sort label {float:left;display:block;width:46%;margin:2px 1%}
+.comiis_post_sort .comiis_px, .comiis_post_sort .comiis_pt {font-size:16px}
+.comiis_input_style input.comiis_file_key {width:26px;height:30px;opacity:0;position:absolute;top:0px;right:0px;display:block;z-index:2}
+.comiis_upbox_attach {padding:0 12px;overflow:hidden}
+.comiis_upbox_attach p {height:30px;line-height:30px;padding:12px 0;position:relative}
+.comiis_upbox_attach p span {float:right;padding-right:5px}
+.comiis_upbox_attach p a {display:inline-block;width:82px;height:30px;line-height:30px;padding-left:12px;border-radius:40px}
+.comiis_upbox_attach p a input {position:absolute;top:10px;left:0;height:40px;width:100px;z-index:10;opacity:0}
+.comiis_upbox_attach p a i {float:left;font-size:18px;padding-right:3px}
+.comiis_upbox_attach li {padding:12px 0;overflow:hidden}
+.comiis_upbox_attach li .kmtit {line-height:22px;font-size:13px}
+.comiis_upbox_attach li .kmtit span {font-weight:400}
+.comiis_upbox_attach li .kmbtn {float:right;padding:0 10px;margin-left:8px;font-size:12px;border-radius:30px}
+.comiis_upbox_attach li .kmimg {float:left;height:22px;width:22px;margin-right:6px}
+.comiis_upbox_attach li .kminput {margin-top:8px;height:24px;line-height:24px;font-size:13px}
+.comiis_upbox_attach li .kminput .attms {width:100%;overflow:hidden}
+.comiis_upbox_attach li .kminput .attqx {float:left;width:49%;overflow:hidden}
+.comiis_upbox_attach li .kminput .attjg {float:right;width:49%;overflow:hidden}
+.comiis_upbox_attach li .kminput span {padding-right:5px}
+.comiis_upbox_attach li .kminput em {padding-left:5px}
+.comiis_upbox_attach li .kminput .comiis_input {padding:0 6px;height:24px;line-height:24px;font-size:13px;border-radius:4px}
+.comiis_bqbox .bqbox_t ul {height:41px}
+.comiis_icotxt .b_l {border-left:none !important}
+.comiis_icotxt .b_r {border-right:none !important}
+.comiis_atlist {margin:0 12px;overflow:hidden}
+.comiis_atlist li {float:left;margin-top:12px;margin-right:12px;height:26px;line-height:26px;border-radius:20px}
+.comiis_atlist a {display:block;padding:0 10px}
+
+/* =======================================================
+   สไตล์ Card UI แบบเจาะจงคลาส (ปลอดภัย & เสถียรที่สุด 100%)
+   ======================================================= */
+   
+/* 1. พื้นหลังของจอ (สีเทาอ่อน) */
+.comiis_post_from { 
+    background-color: #f3f4f6 !important; 
+    padding: 15px !important; 
+    padding-bottom: 80px !important; 
+}
+
+/* 2. ล้างค่าเส้นขอบและพื้นหลังที่ติดมาจากระบบเก่า */
+.comiis_post_from .comiis_input_style.bg_f, 
+.comiis_post_from .comiis_post_sort.bg_f, 
+.comiis_post_from ul { 
+    background: transparent !important; 
+    border: none !important; 
+	
+}
+
+/* 3. 🛑 กวาดล้างกล่องขยะและกล่องล่องหน (ป้องกันช่องว่างระหว่างรูปภาพ) */
+.comiis_post_from li[style*="display: none"],
+.comiis_post_from li[style*="display:none"],
+.comiis_post_from li.hide,
+.comiis_post_from li:empty {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* =======================================================
+   ส่วนที่ 1: กล่องมาตรฐานบรรทัดเดียว (หัวข้อ, Shopee, Tiktok, รูป 1-6) 
+   ======================================================= */
+.comiis_post_from li.comiis_styli, 
+.comiis_post_from li.tebie_li {
+    background-color: #ffffff !important;
+    border-radius: 0px 0px 10px 10px !important;
+    margin-bottom: 12px !important;
+    padding: 12px 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+}
+.comiis_post_from li.comiis_styli .styli_tit { 
+    width: auto !important; 
+    min-width: 90px !important; 
+    font-size: 16px !important; 
+    color: #333 !important; 
+    flex-shrink: 0 !important; 
+    text-align: left !important; 
+}
+.comiis_post_from li.comiis_styli .flex { 
+    flex: 1 !important; 
+    display: block !important; 
+}
+
+/* ช่องพิมพ์ข้อความ (ให้ชิดซ้าย ตามที่คุณชอบ) */
+.comiis_post_from li.comiis_styli .flex input,
+.comiis_post_from li.comiis_styli .flex select,
+.comiis_post_sort li input.comiis_px {
+    width: 100% !important; 
+    text-align: left !important; 
+    border: none !important; 
+    background: transparent !important; 
+    font-size: 16px !important; 
+    color: #333 !important; 
+    padding: 0 !important; 
+    outline: none !important;
+}
+.comiis_post_from li.comiis_styli .flex input::-webkit-input-placeholder { color: #b2b2b2 !important; }
+
+/* พิเศษ: จัดปุ่มเพิ่มภาพ (รูปที่ 1-6) ให้อยู่ชิดขวาเสมอ */
+.comiis_post_from li.comiis_styli:has(input[type="file"]) .flex { 
+    text-align: right !important; 
+}
+
+/* =======================================================
+   ส่วนที่ 2: ระบบประกอบร่างกล่อง (เนื้อหา*, Tags*) 
+   ======================================================= */
+   
+/* ชิ้นส่วนบนสุด (หัวข้อ): ขอบมนด้านบน, ขอบล่างเหลี่ยม */
+.comiis_post_from li.comiis_stylitit {
+    background-color: #ffffff !important;
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 12px 15px 8px 15px !important;
+    border-bottom: 1px solid #f2f2f2 !important;
+    font-weight: bold !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+    font-size: 16px !important;
+    color: #333 !important;
+	margin-top: 10px;
+}
+
+/* ชิ้นส่วนกลาง (กล่อง Textarea พิมพ์เนื้อหา): ขอบเหลี่ยมทั้งบนและล่าง */
+.comiis_post_from li.comiis_stylino {
+    background-color: #ffffff !important;
+    border-radius: 0 !important; 
+    margin-bottom: 0 !important;
+    padding: 10px 15px !important;
+    border: none !important;
+}
+.comiis_post_from textarea.comiis_pt { 
+    width: 100% !important; 
+    border: none !important; 
+    background: transparent !important; 
+    font-size: 16px !important; 
+    padding: 0 !important; 
+    outline: none !important; 
+    min-height: 80px !important; 
+}
+
+/* ชิ้นส่วนล่างสุด (ปุ่ม [+] สำหรับอัปโหลดในเนื้อหา): ขอบบนเหลี่ยม, ขอบล่างมน */
+.comiis_post_from .comiis_upbox {
+    background-color: #ffffff !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+    margin-bottom: 12px !important;
+    padding: 0 15px 15px 15px !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04) !important;
+    display: block !important;
+}
+
+/* กล่อง Checkbox (Tags): ให้แนบสนิทกับหัวข้อด้านบน */
+.comiis_post_from li.post_sort {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    margin-top: 0 !important; 
+}
+.comiis_post_sort .post_sort label { 
+    margin: 5px 0 !important; 
+    font-size: 14px !important; 
+    color: #555 !important; 
+    display: inline-block !important; 
+    width: 48% !important; 
+}
+
+/* =======================================================
+   ส่วนที่ 3: แถบเครื่องมือ & ปุ่มโพสต์ 
+   ======================================================= */
+.comiis_post_from .comiis_post_ico li { 
+    background-color: transparent !important; 
+    box-shadow: none !important; 
+    margin-bottom: 0 !important; 
+    padding: 0 !important; 
+}
+.comiis_btnbox { 
+    position: fixed !important; 
+    bottom: 0 !important; 
+    left: 0 !important; 
+    width: 100% !important; 
+    background: #ffffff !important; 
+    padding: 10px 15px !important; 
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.06) !important; 
+    z-index: 10 !important; 
+    box-sizing: border-box !important; 
+}
+.comiis_btnbox .comiis_btn { 
+    width: 100% !important; 
+    margin: 0 !important; 
+    border-radius: 6px !important; 
+    height: 44px !important; 
+    line-height: 44px !important; 
+}
+
+
+
+/* =======================================================
+   แก้ไขเฉพาะ 2 จุดสุดท้าย ให้กล่องแนบชิดกัน 100%
+   ======================================================= */
+
+/* 1. ลบความมนขอบบนของกล่อง "ไฮไลท์เกริ่นนำ" ให้ต่อกันสนิทกับ "เนื้อหา *" */
+.comiis_post_from li#comiis_list_comiis_sp_details + li.comiis_styli,
+.comiis_post_from li.comiis_styli:has(input#needsubject) {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    margin-top: 0 !important;
+	    border-radius: 10px 10px 10px 10px !important;
+}
+
+/* 2. บังคับลบระยะห่าง (ล้างค่าคลาส mt10 ของระบบ) ให้กล่องพิมพ์คอมเมนต์ชิดกับ "เนื้อหา" */
+.comiis_post_from li.comiis_thread_content + li.comiis_stylino.comiis_needmessage,
+.comiis_post_from li.comiis_stylino.comiis_needmessage.mt10,
+.comiis_post_from li.comiis_stylino.comiis_needmessage {
+    margin-top: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}

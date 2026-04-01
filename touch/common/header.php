@@ -1,0 +1,385 @@
+<?PHP exit('Access Denied');?>
+<!--{eval global $comiis_lang, $comiis_app_switch;require_once DISCUZ_ROOT.'./template/comiis_app/comiis/php/comiis_lang.'.currentlang().'.php';}-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--{if $comiis_app_switch['comiis_header_show'] == 2}-->
+{eval $comiis_isweixin = 1;}
+<!--{elseif $comiis_app_switch['comiis_header_show'] == 0 || $comiis_app_switch['comiis_header_show'] == 1}-->
+{eval $comiis_isweixin = 0;}
+<!--{/if}-->
+<!--{subtemplate common/comiis_title}-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-control" content="{if $_G['setting']['mobile'][mobilecachetime] > 0}{$_G['setting']['mobile'][mobilecachetime]}{else}no-cache{/if}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui, minimum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes">
+<!--{if $comiis_app_switch['comiis_appname']}-->
+<meta name="apple-mobile-web-app-title" content="{$comiis_app_switch['comiis_appname']}">
+<!--{/if}-->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="template/comiis_app/pic/icon57.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="template/comiis_app/pic/icon114.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="template/comiis_app/pic/icon152.png">
+<link rel="icon" sizes="114x114" href="template/comiis_app/pic/icon114.png" /> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!--{if $comiis_app_switch['comiis_ucqqfull'] == 1}-->
+<meta name="full-screen" content="yes">
+<meta name="browsermode" content="application">
+<meta name="x5-fullscreen" content="true">
+<meta name="x5-page-mode" content="app">
+<!--{/if}-->
+<!--{if $_G['basescript'] == 'home' && CURMODULE == 'space' && $_GET['do'] == 'profile' && $_GET['mycenter'] == 1}-->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1986 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<!--{/if}-->
+<!--{if $_G['basescript']=='forum' && CURMODULE=='viewthread'}-->
+<!--{eval $comiis_view_pic = $_G['siteurl'].'./template/comiis_app/pic/icon152.png';}-->
+<!--{loop $postlist $postg}-->
+<!--{if count($postg[attachments])}-->
+<!--{eval $comiis_view_pic_array = current($postg[attachments]);$comiis_view_pic = $_G['siteurl'].$comiis_view_pic_array['url'].$comiis_view_pic_array['attachment'];}-->
+<meta property="og:image" content="{$comiis_view_pic}">
+<meta itemprop="image" content="{$comiis_view_pic}">
+<!--{eval break;}-->
+<!--{/if}-->
+<!--{/loop}-->
+<!--{/if}-->
+<base href="{$_G['siteurl']}" />
+<title><!--{if !empty($navtitle)}-->$navtitle<!--{/if}--><!--{if $comiis_app_switch['comiis_sitename'] || $_G['setting']['sitename']}--> - <!--{/if}--><!--{if $comiis_app_switch['comiis_sitename']}-->$comiis_app_switch['comiis_sitename']<!--{else}-->$_G['setting']['sitename']<!--{/if}--></title>
+<meta name="keywords" content="{if !empty($metakeywords)}{echo dhtmlspecialchars($metakeywords)}{/if}" />
+<meta name="description" content="{if !empty($metadescription)}{echo dhtmlspecialchars($metadescription)}, {/if}{if $comiis_app_switch['comiis_sitename']}$comiis_app_switch['comiis_sitename']{else}$_G['setting']['bbname']{/if}" />
+<link rel="shortcut icon" href="template/comiis_app/comiis/img/favicon.ico">
+<script src="template/comiis_app/comiis/js/jquery.min.js?{VERHASH}"></script>
+<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G['uid']', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', comiis_leftnv_id = '{$comiis_app_switch['comiis_leftnv']}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G['setting'][showusercard]}', comiis_isapp = {echo intval($_G['comiis_isapp']);}, attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G['setting'][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G['siteurl']', JSPATH = '$_G['setting'][jspath]', comiis_pageid = '{$comiis_nav_ids}', comiis_page_start = 0, comiis_rlmenu = {echo $comiis_app_switch['comiis_scrolltop_ico'] ? intval($comiis_app_switch['comiis_scrolltop_ico']) : 0;}, comiis_lrshow = {echo $comiis_app_switch['comiis_scrolltop_show'] ? intval($comiis_app_switch['comiis_scrolltop_show']) : 0;}, comiis_post_btnwz = {echo $comiis_app_switch['comiis_post_btnwz'] ? intval($comiis_app_switch['comiis_post_btnwz']) : 0;}, comiis_footer = {if ($comiis_foot != 'no' || $comiis_open_footer) && !$comiis_closefooter && count($comiis_app_nav['mnav'])}1{else}0{/if}, comiis_open_wblink = {echo $comiis_app_switch['comiis_open_wblink'] ? intval($comiis_app_switch['comiis_open_wblink']) : 0;}, comiis_open_wblink_txt = '{$comiis_app_switch['comiis_open_wblink_txt']}', comiis_open_wblink_tip = {echo $comiis_app_switch['comiis_open_wblink_tip'] ? intval($comiis_app_switch['comiis_open_wblink_tip']) : 0;};
+var comiis_all_https = new Array({loop explode("\n",$comiis_app_switch['comiis_open_nwblink']) $v}{if strlen(trim($v)) > 1}'{echo trim($v);}', {/if}{/loop}window.location.host);
+</script>
+<link rel="stylesheet" href="template/comiis_app/comiis/css/comiis.css?{VERHASH}" type="text/css" media="all">
+<script src="template/comiis_app/comiis/js/common{if currentlang() == 'SC_UTF8' || currentlang() == 'TC_UTF8'}_u{/if}.js?{VERHASH}" charset="{CHARSET}"></script>
+<!--{if $comiis_app_switch['comiis_loadimg']}--><script type="text/javascript" src="template/comiis_app/comiis/js/jquery.lazyload.min.js"></script><!--{/if}-->
+<script>
+var comiis_nvscroll = {if $comiis_isweixin != 1}{if $comiis_app_switch['comiis_header_show'] == 1}1{else}0{/if}{else}0{/if};
+var comiis_isweixin = '$comiis_isweixin';
+</script>
+<!--{if $comiis_app_switch['comiis_share_style'] != 0 || $comiis_app_switch['comiis_leftnv'] == 1 || $comiis_app_switch['comiis_all_abg'] != 1 || $comiis_app_switch['comiis_iphone_font'] == 1}-->
+<style>
+<!--{if $comiis_app_switch['comiis_iphone_font'] == 1}-->*, caption, th, h1, h2, h3, h4, h5, h6 {font-weight:400}<!--{/if}-->
+<!--{if $comiis_app_switch['comiis_all_abg'] != 1}-->a:active {background:rgba(0,0,0,0.08)}<!--{/if}-->
+<!--{if $comiis_app_switch['comiis_share_style'] != 0}-->.comiis_share_box #comiis_share a span {background-image:url(template/comiis_app/comiis/img/comiis_share_ico{if $comiis_app_switch['comiis_share_style'] == 1}01{elseif $comiis_app_switch['comiis_share_style'] == 2}02{/if}.png)}<!--{/if}-->
+<!--{if $comiis_app_switch['comiis_leftnv'] == 1}-->#comiis_head {z-index:200}<!--{/if}-->
+<!--{if $comiis_app_switch['comiis_imgyj'] != 1}-->
+.comiis_sendbtn {padding:0 15px}
+.comiis_topsearch .ssbox, .comiis_bodybox .comiis_mh_search .ssbox, .comiis_bodybox .comiis_search01_two .ssbtn {border-radius:0 30px 30px 0;}
+.comiis_topsearch ul i.ssico, .comiis_topsearch .comiis_ssstyle, .comiis_bodybox .comiis_mh_search .comiis_ssstyle, .comiis_bodybox .comiis_mh_search01 .comiis_ssstyle {border-radius:30px 0 0 30px}
+.comiis_znalist .user_gz, .comiis_view_header3 .comiis_view_header1 span.top_jh:after {padding:0 10px;border-radius:30px}
+.comiis_sendbtn, #comiis_search_two .ssbtn, .comiis_znalist .forumlist_li_top h2 .comiis_xifont:after, .comiis_topsearch #comiis_search_noe .ssbox, #group .comiis_topsearch .ssbox, .comiis_bbslist_fid li span, .comiis_forumlist_head .top_btn a, .comiis_forumlist_heads .top_btn a, .comiis_view_topuser .followmod, .comiis_view_header3 .comiis_view_header1 .header1_topl, .comiis_all_txshow .txshow_btn a, .comiis_poll_top i, .comiis_medaltip a.kmbtn, .comiis_bbslist_fid h2 .comiis_xifont:after, .comiis_bbs_show h2 .comiis_xifont:after, .comiis_bodybox .comiis_mh_gezi11 a, .comiis_bodybox .comiis_mh_list12, .comiis_bodybox .comiis_mh_img28 .kmbox span.kmuser img, .comiis_bodybox .comiis_mh_search .ssct, .comiis_bodybox .comiis_search_two .ssbtn, .comiis_topsearch .tagssbox, .comiis_bodybox .comiis_search01_two .ssbtn i {border-radius:30px}
+.forumlist_li_box .listimgbigx li, .forumlist_li_box .listimgs li, .comiis_milist .milist_oneimg img, .comiis_pyqlist_img img, .comiis_pyqlist_imgs li, .forumlist_li_box .listimgtwo li, .forumlist_li_box .listimgx img, .comiis_img_list li img, .comiis_postimg img, .comiis_img_one img, .comiis_wzlists .wzlist_imga, .comiis_dzhan_img h2 a, .comiis_wzlists .wzlist_imgs .listimgs li, .comiis_znlist .forumlist_li_box .listimgbig li, .comiis_znlist .forumlist_li_box .listimgbig img, .comiis_upimg, .comiis_wzv .view_body img, .comiis_wzv .view_body .uchome-message-pic img, .comiis_wzv_s, .comiis_wz_list .wz_img, .comiis_wzlist_img a, .comiis_wz_list .wz_imgs .listimg li, .comiis_bloglist li .blog_img img, .comiis_duotulist .comiis_pyqlist_img1p img, .comiis_bodybox .comiis_mh_img li a, .comiis_bodybox .comiis_mh_bigimg li a img, .comiis_bodybox .comiis_mh_img12 li a img, .comiis_bodybox .comiis_mh_img12 .swiper-slide h2, .comiis_bodybox .comiis_mh_img15 li img, .comiis_bodybox .comiis_mh_img16 li img, .comiis_bodybox .comiis_mh_img17 li a.kmimg img, .comiis_bodybox .comiis_mh_img18 li a.kmimg img, .comiis_bodybox .comiis_mh_twlist .twlist_img, .comiis_bodybox .comiis_mh_hdimg li, .comiis_bodybox .comiis_mh_twlist01 .twlist_img, .comiis_bodybox .comiis_mh_img20 li .kmimg, .comiis_bodybox .comiis_mh_img26 li a, .comiis_bodybox .comiis_mh_img26 li img, .comiis_bodybox .comiis_mh_img24 li a, .comiis_bodybox .comiis_mh_img23 a, .comiis_bodybox .comiis_mh_img22 a, .comiis_bodybox .comiis_mh_img27 a, .comiis_bodybox .comiis_mh_img28 a, .comiis_bodybox .comiis_mh_img29 a, .comiis_bodybox .comiis_mh_img34 a, .comiis_bodybox .comiis_mhimg10 li, .comiis_bodybox .comiis_mh_img19 li a .kmimg, .comiis_bodybox .comiis_mh_img31 .img31_img, .comiis_flxx_li .flxx_li_zimg {border-radius:4px}
+.comiis_kcimg li, .comiis_tukuimg a.comiis_tukubox, .comiis_tukuimg .comiis_tukuuser, .comiis_waterfall li, .comiis_bigimg .listimg img, .comiis_bigimg .forumlist_li_box .listimg, .comiis_jximg, .comiis_bodybox .comiis_mh_img25 li img, .comiis_bodybox .comiis_mh_img33 li a, .comiis_bodybox .comiis_mh_list17 li, .comiis_mh_img35 .swiper-slide h2, .comiis_mh_img35 li img, .comiis_bodybox .comiis_mh_img36 li {border-radius:6px}
+<!--{/if}-->
+</style>
+<!--{/if}-->
+<!--{if $comiis_app_switch['comiis_seohead']}-->$comiis_app_switch['comiis_seohead']<!--{/if}-->
+<!--{hook/global_comiis_header_mobile}-->
+<!--{eval $_G['comiis_new'] = 4;}-->
+<!--{if $comiis_isweixins}-->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js" type="text/javascript"></script>
+<!--{/if}-->
+</head>
+<!--{template common/comiis_header}-->
+<!--{if $_G['basescript'] == 'member' && CURMODULE == 'logging' && $comiis_isweixin == 1}-->
+    <!--{if $_GET['lostpasswd'] == 'yes' && $comiis_app_switch['comiis_reg_zmtxt']}-->
+        <!--{eval $comiis_bg = 1;}-->
+    <!--{elseif $comiis_app_switch['comiis_reg_dltxt'] && $_GET['lostpasswd'] != 'yes'}-->
+        <!--{eval $comiis_bg = 1;}-->
+    <!--{/if}-->
+<!--{elseif $_G['basescript'] == 'member' && CURMODULE == 'register' && $_GET['mod']!='connect' && $comiis_isweixin == 1 && $comiis_app_switch['comiis_reg_regtxt']}-->
+    <!--{eval $comiis_bg = 1;}-->
+<!--{elseif $comiis_app_switch['comiis_reg_zmtxt'] && $comiis_isweixin == 1 && $_G['basescript'] == 'member' && $_GET['mod'] == 'getpasswd'}-->
+    <!--{eval $comiis_bg = 1;}-->
+<!--{/if}-->
+<body id="{$_G['basescript']}" class="comiis_bodybg<!--{if $comiis_bg==1}--> bg_f<!--{/if}--> pg_{CURMODULE}<!--{if $comiis_foot != 'no' && $comiis_open_footer && ($_G['basescript'] == 'forum' && CURMODULE == 'forumdisplay')}--> comiis_showfoot<!--{/if}--> jnbv comiis_leftnv{$comiis_app_switch['comiis_leftnv']}">
+<div class="comiis_loadings"{if $comiis_app_switch['comiis_loadbox'] == 1} style="display: none;"{/if}>
+	<div class="comiis_loadings_icon">
+		<i class="weui-loading weui-icon_toast"></i>
+		<p class="comiis_loadings_content">{$comiis_lang['loader']}</p>
+	</div>
+</div>
+<!--{if $comiis_app_switch['comiis_loadbox'] != 1}-->
+<script>
+function comiis_loadings() {
+	$('.comiis_loadings').fadeOut(500);
+}
+(function($, window, undefined) {
+	$(window).ready(function () {
+		comiis_loadings();
+	});
+	window.onerror = function () {
+		comiis_loadings();
+	};
+	setTimeout(function() {
+		comiis_loadings();
+	}, 1500);
+})(jQuery, window);
+</script>
+<!--{/if}-->
+<!--{if !$_G['cookie']['comiis_fullscreen_cookies'] && (($_G['basescript'] == 'forum' && CURMODULE == 'index') || $comiis_data['default'] == 1) && $comiis_app_switch['comiis_fullscreen']}-->
+	<style>{$comiis_app_switch['comiis_fullscreen_css']}</style>
+	<div class="comiis_fullscreen bg_f">
+		<a href="{$comiis_app_switch['comiis_fullscreen_url']}" class="comiis_fullscreen_img"><img src="{$comiis_app_switch['comiis_fullscreen_img']}"></a>
+		<!--{if $comiis_app_switch['comiis_fullscreen_nologo'] !=1}-->
+		<a href="{$comiis_app_switch['comiis_fullscreen_logourl']}" class="comiis_fullscreen_logo">
+			<img src="{$comiis_app_switch['comiis_fullscreen_logoimg']}">
+			<p class="f_d">{$comiis_app_switch['comiis_fullscreen_copy']}</p>
+		</a>
+		<!--{/if}-->
+		<div class="comiis_fullscreen_time">{echo str_replace(array('[timenum]'), array($comiis_app_switch['comiis_fullscreen_time']), $comiis_app_switch['comiis_fullscreen_djs']);}</div>
+	</div>
+	<script type="text/javascript">
+	setcookie('comiis_fullscreen_cookies', '1', {$comiis_app_switch['comiis_fullscreen_showtime']}, '', '', '');
+	var comiis_fullscreen_title = document.title;
+	document.title = '{$comiis_app_switch['comiis_fullscreen_title']}';
+	var num = {$comiis_app_switch['comiis_fullscreen_time']};
+	var interval = setInterval(function(){
+		if(num == 0){
+			comiis_fullscreen_close();
+		}
+		num--;
+		$('.comiis_fullscreen_time span').html(num);
+	},1000);
+	$('.comiis_fullscreen_time').on('click', function(e) {
+		comiis_fullscreen_close();
+	});
+	function comiis_fullscreen_close() {
+		document.title = comiis_fullscreen_title;
+		$('.comiis_fullscreen').hide();
+		clearInterval(interval);
+	}
+	</script>
+<!--{/if}-->
+<div class="comiis_body">
+	<!--{if $comiis_app_switch['comiis_leftnv'] != 2}-->
+        <!--{eval loadcache('usergroups');}-->
+        <div class="comiis_leftmenubg" style="display:none"></div>
+	<!--{/if}-->
+    <!--{if $comiis_app_switch['comiis_leftnv'] != 1 && $comiis_app_switch['comiis_leftnv'] != 2}-->
+        <div class="comiis_sidenv_box{if $comiis_app_switch['comiis_leftnv_list'] == 1} comiis_sidenv_boxv1{/if}" style="display:none;">
+            <div class="comiis_sidenv_top{if $comiis_app_switch['comiis_leftnv_top'] == 1} comiis_sidenv_topv1{/if} f_f">
+							<div class="sidenv_exit">
+								<!--{if $_G['uid']}-->             
+									<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}"><span><i class="comiis_font">&#xe61c;</i></span></a>
+									<!--{if $comiis_app_switch['comiis_leftnv_top'] == 0}--><a href="home.php?mod=space&uid=$_G['uid']&do=profile&mycenter=1"><span><i class="comiis_font">&#xe63e;</i></span></a><!--{/if}-->
+								<!--{/if}--> 
+							</div>
+              <!--{if $_G['uid']}-->
+                <!--{if $comiis_app_switch['comiis_leftnv_top'] == 0}-->
+                <div class="sidenv_edit">                
+                    <a href="home.php?mod=spacecp&ac=promotion"><span><i class="comiis_font fyy">&#xe6f6;</i></span></a>
+                </div>       
+                <!--{/if}-->         
+                <a href="home.php?mod=space&uid=$_G['uid']&do=profile&mycenter=1" class="sidenv_user">
+                  {if $_G['member'][newpm] || $_G['member'][newprompt]}<span class="sidenv_num bg_del f_f">{echo $_G['member'][newpm] + $_G['member'][newprompt]}</span>{/if}				
+                  <em><img src="{echo avatar($_G['uid'],middle,true)}?{echo time();}"></em>
+                  <!--{if $comiis_app_switch['comiis_leftnv_top'] == 1}-->
+                  <p class="user_tit fyy">{$_G['member'][username]}</p>
+                  <p class="f13 mt5"><span class="user_lev bg_0"{if $_G['cache']['usergroups'][$_G['member']['groupid']]['color']} style="background:$_G['cache']['usergroups'][$_G['member']['groupid']]['color'] !important;color:#fff !important"{/if}>{if $comiis_app_switch['comiis_lev_txt']}{$comiis_app_switch['comiis_lev_txt']}{else}Lv.{/if}{$_G[group]['stars']}</span><span class="fyy">{echo strip_tags($_G[group][grouptitle]);} {lang credits}: $_G['member'][credits]</span></p>
+                  <!--{else}-->
+                  <p><span class="user_tit fyy">{$_G['member'][username]}</span><span class="user_lev bg_0"{if $_G['cache']['usergroups'][$_G['member']['groupid']]['color']} style="background:$_G['cache']['usergroups'][$_G['member']['groupid']]['color'] !important;color:#fff !important"{/if}>{if $comiis_app_switch['comiis_lev_txt']}{$comiis_app_switch['comiis_lev_txt']}{else}Lv.{/if}{$_G[group]['stars']}</span></p>
+                  <p class="f13 comiis_tm mt5"><span class="fyy">{echo strip_tags($_G[group][grouptitle]);}</span><span class="fyy">{lang credits}: $_G['member'][credits]</span></p>
+                  <!--{/if}-->
+                </a>
+                <!--{elseif !$_G[connectguest]}-->			
+                <a href="member.php?mod=logging&action=login" class="sidenv_user">
+                  <em><!--{avatar(0,'middle')}--></em>
+                  <p><span class="user_tit user_titx fyy">
+                  <script language="javascript">					
+                    var myDate = new Date();
+                    var i = myDate.getHours();
+                    if(i < 12)
+                    document.write("{$comiis_lang['tip88']}");
+                    else if(i >=12 && i < 14)
+                    document.write("{$comiis_lang['tip89']}");
+                    else if(i >= 14 && i < 18)
+                    document.write("{$comiis_lang['tip90']}");
+                    else if(i >= 18)
+                    document.write("{$comiis_lang['tip91']}");					
+                    </script> {$comiis_lang['tip92']}<!--{if $comiis_app_switch['comiis_leftnv_top'] != 1}-->{$comiis_lang['tip93']}<!--{/if}--></span></p>
+                  <p class="fyy f13 mt5">{$comiis_lang['tip94']}</p>
+                </a>
+             <!--{else}-->
+                <!--{if $comiis_app_switch['comiis_leftnv_top'] == 0}--><div class="sidenv_edit"><i class="comiis_font fyy">&#xe63e;</i></div><!--{/if}-->
+                <div class="sidenv_exit"><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}"><span><i class="comiis_font">&#xe61c;</i></span></a></div>
+                <a href="member.php?mod=connect" class="sidenv_user">
+                  {if $_G['member'][newpm] || $_G['member'][newprompt]}<span class="sidenv_num bg_del f_f">{echo $_G['member'][newpm] + $_G['member'][newprompt]}</span>{/if}				
+                  <em><img src="{echo avatar(0,middle,true)}?{echo time();}"></em>
+                  <!--{if $comiis_app_switch['comiis_leftnv_top'] == 1}-->
+                  <p class="user_tit fyy">{$_G['member'][username]}</p>
+                  <p class="fyy mt5">{echo strip_tags($_G[group][grouptitle]);}, {$comiis_lang['reg21']}</p>
+                  <!--{else}-->
+                  <p><span class="user_tit fyy">{$_G['member'][username]}</span><span class="comiis_tm">{echo strip_tags($_G[group][grouptitle]);}</span></p>
+                  <p class="fyy mt5"><span>{$comiis_lang['reg21']}</span></p>
+                  <!--{/if}-->
+                </a>
+            <!--{/if}-->
+                <!--{if $comiis_app_switch['comiis_svg'] != 1}--><div class="comiis_svg_box">{if $comiis_app_switch['comiis_leftnv_list'] == 1}<div class="comiis_svg_c"></div><div class="comiis_svg_d"></div>{else}<div class="comiis_svg_a"></div><div class="comiis_svg_b"></div>{/if}</div><!--{/if}-->
+            </div>
+            <!--{if !empty($_G['setting']['pluginhooks']['global_misign_mobile']) && $_G['uid']}-->
+                <style>body .comiis_sidenv_box .sidenv_li {height:-moz-calc(100% - 215px);height:-webkit-calc(100% - 215px);height:calc(100% - 215px);}</style>
+                <div class="comiis_k_misign{if $comiis_app_switch['comiis_leftnv_list'] == 1}v1{/if}">
+                    <!--{hook/global_misign_mobile}-->
+                </div>
+            <!--{/if}-->
+            <div class="sidenv_li{if $comiis_app_switch['comiis_leftnv_list'] == 1} sidenv_liv1 f_f{/if}">			
+                <ul class="comiis_left_Touch lkmtks">
+                    <!--{loop $comiis_app_nav['lnav'] $temp}-->
+                        <li class="comiis_left_Touch"><a href="$temp['url']" class="comiis_left_Touch">
+						<!--{if strpos($temp['icon'], '/') !== false}-->
+							<img src="$temp['icon']" />
+						<!--{else}-->
+                            {if $temp['icon']}
+                                {if $comiis_app_switch['comiis_leftnv_icon'] == 1}
+                                    <i class="comiis_font comiis_left_Touch kmicon f_f{if !$temp['bgcolor']} bg_0{/if}"{if $temp['bgcolor']} style="background:{$temp['bgcolor']};"{/if}>{if $temp['icon']}&#x{$temp['icon']};{else}&#xe633;{/if}</i>
+                                {else}
+                                    <i class="comiis_font comiis_left_Touch{if !$temp['bgcolor']} f_c{/if}"{if $temp['bgcolor']} style="color:{$temp['bgcolor']};"{/if}>{if $temp['icon']}&#x{$temp['icon']};{else}&#xe633;{/if}</i>
+                                {/if}
+                            {/if}
+                        <!--{/if}-->
+                        $temp['name']</a></li>
+                    <!--{/loop}-->
+                    <li class="comiis_left_Touch styli_h10"></li>
+                </ul>
+            </div>
+        </div>
+    <!--{elseif $comiis_app_switch['comiis_leftnv'] == 1}-->
+        <div class="comiis_gobtn_tbox{if $comiis_app_switch['comiis_leftnv_list'] == 1} comiis_sidenv_boxv1 f_f{else} bg_f{/if} cl">
+            <!--{if $comiis_app_switch['comiis_leftnv_user'] != 1}-->
+            <div class="comiis_gobtn_user">
+                <div class="comiis_sidenv_top{if $comiis_app_switch['comiis_leftnv_top'] == 1} comiis_sidenv_topv1{/if} f_f">
+                <!--{if $_G['uid']}-->
+                    <div class="sidenv_exit"><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}"><span><i class="comiis_font">&#xe61c;</i></span></a></div>
+                    <a href="home.php?mod=space&uid=$_G['uid']&do=profile&mycenter=1" class="sidenv_user">              		
+                      <em><img src="{echo avatar($_G['uid'],middle,true)}?{echo time();}">{if $_G['member'][newpm] || $_G['member'][newprompt]}<span class="sidenv_num bg_del f_f">{echo $_G['member'][newpm] + $_G['member'][newprompt]}</span>{/if}		</em>
+                      <!--{if $comiis_app_switch['comiis_leftnv_top'] == 1}-->
+                      <p class="user_tit fyy">{$_G['member'][username]}</p>
+                      <p><span class="user_lev bg_0"{if $_G['cache']['usergroups'][$_G['member']['groupid']]['color']} style="background:$_G['cache']['usergroups'][$_G['member']['groupid']]['color'] !important;color:#fff !important"{/if}>{if $comiis_app_switch['comiis_lev_txt']}{$comiis_app_switch['comiis_lev_txt']}{else}Lv.{/if}{$_G[group]['stars']}</span><span class="fyy">{echo strip_tags($_G[group][grouptitle]);} {lang credits}: $_G['member'][credits]</span></p>
+                      <!--{else}-->
+                      <p class="mt10"><span class="user_tit fyy">{$_G['member'][username]}</span><span class="user_lev bg_0"{if $_G['cache']['usergroups'][$_G['member']['groupid']]['color']} style="background:$_G['cache']['usergroups'][$_G['member']['groupid']]['color'] !important;color:#fff !important"{/if}>{if $comiis_app_switch['comiis_lev_txt']}{$comiis_app_switch['comiis_lev_txt']}{else}Lv.{/if}{$_G[group]['stars']}</span></p>
+                      <p class="fyy f13"><span>{echo strip_tags($_G[group][grouptitle]);}</span><span>{lang credits}: $_G['member'][credits]</span></p>
+                      <!--{/if}-->
+                    </a>
+                    <!--{elseif !$_G[connectguest]}-->			
+                    <!--{if $comiis_app_switch['comiis_leftnv_top'] == 0}-->
+                        <div class="sidenv_exit"><a href="member.php?mod={$_G['setting'][regname]}"><span style="width:auto;padding:0 8px">{$_G['setting']['reglinkname']}</span></a></div>
+                    <!--{/if}-->
+                    <a href="member.php?mod=logging&action=login" class="sidenv_user">
+                      <em><!--{avatar(0,'middle')}--></em>
+                      <p class="mt5"><span class="user_tit fyy">
+                      <script language="javascript">					
+                        var myDate = new Date();
+                        var i = myDate.getHours();
+                        if(i < 12)
+                        document.write("{$comiis_lang['tip88']}");
+                        else if(i >=12 && i < 14)
+                        document.write("{$comiis_lang['tip89']}");
+                        else if(i >= 14 && i < 18)
+                        document.write("{$comiis_lang['tip90']}");
+                        else if(i >= 18)
+                        document.write("{$comiis_lang['tip91']}");					
+                        </script> {$comiis_lang['tip92']}<!--{if $comiis_app_switch['comiis_leftnv_top'] == 1}-->{$comiis_lang['tip93']}<!--{/if}--></span></p>
+                      <p class="fyy">{$comiis_lang['tip94']}</p>
+                    </a>
+                 <!--{else}-->
+                    <!--{if $comiis_app_switch['comiis_leftnv_top'] == 0}--><div class="sidenv_edit"><i class="comiis_font fyy">&#xe63e;</i></div><!--{/if}-->
+                    <div class="sidenv_exit"><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}"><span><i class="comiis_font">&#xe61c;</i><!--{if $comiis_app_switch['comiis_leftnv_top'] == 0}-->{lang logout}<!--{/if}--></span></a></div>
+                    <a href="member.php?mod=connect" class="sidenv_user">
+                      {if $_G['member'][newpm] || $_G['member'][newprompt]}<span class="sidenv_num bg_del f_f">{echo $_G['member'][newpm] + $_G['member'][newprompt]}</span>{/if}				
+                      <em><img src="{echo avatar(0,middle,true)}?{echo time();}"></em>
+                      <!--{if $comiis_app_switch['comiis_leftnv_top'] == 1}-->
+                      <p class="user_tit fyy">{$_G['member'][username]}</p>
+                      <p class="fyy">{echo strip_tags($_G[group][grouptitle]);}, {$comiis_lang['reg21']}</p>
+                      <!--{else}-->
+                      <p class="mt5"><span class="user_tit fyy">{$_G['member'][username]}</span><span class="comiis_tm">{echo strip_tags($_G[group][grouptitle]);}</span></p>
+                      <p class="fyy"><span>{$comiis_lang['reg21']}</span></p>
+                      <!--{/if}-->
+                    </a>
+                <!--{/if}-->
+                <!--{if $comiis_app_switch['comiis_svg'] != 1}--><div class="comiis_svg_box">{if $comiis_app_switch['comiis_leftnv_list'] == 1}<div class="comiis_svg_c"></div><div class="comiis_svg_d"></div>{else}<div class="comiis_svg_a"></div><div class="comiis_svg_b"></div>{/if}</div><!--{/if}-->
+                </div>                
+            </div>
+            <!--{/if}-->
+            <ul{if $comiis_app_switch['comiis_leftnv_user'] == 1} class="leftnv_nouser"{/if}>
+                <!--{loop $comiis_app_nav['lnav'] $temp}-->
+                <li><a href="$temp['url']">
+                <!--{if strpos($temp['icon'], '/') !== false}-->
+                    <img src="$temp['icon']" />
+                <!--{else}-->
+                    <span{if $temp['bgcolor']} style="background:{$temp['bgcolor']};"{else} class="bg_0"{/if}><i class="comiis_font f_f">{if $temp['icon']}&#x{$temp['icon']};{else}&#xe607;{/if}</i></span>
+                <!--{/if}-->
+                $temp['name']</a></li>
+                <!--{/loop}-->
+            </ul>
+        </div>
+    <!--{/if}-->
+	<!--{if $_GET['do'] == 'doing' || $_GET['mycenter'] || $_G['comiis_close_header'] != 1 && !($_G['basescript'] == 'home' && CURMODULE == 'space' && ($_GET['from'] =='space' || $_GET['do'] == 'profile' || $_GET['do'] == 'wall'))}-->
+	<div id="comiis_head"{if $comiis_isweixin == 1} class="comiis_head_hidden"{/if}>		
+		<div class="comiis_head{if $comiis_app_switch['comiis_header_style'] == 1} bg_f{/if}{if (($comiis_app_switch['comiis_forum_showstyle']==3 || $comiis_app_switch['comiis_forum_showstyle']==4) && $_G['basescript']=='forum' && CURMODULE=='forumdisplay') || ($comiis_app_switch['comiis_header_style'] == 1 && $comiis_app_switch['comiis_reg_bg'] == 1 && $comiis_app_switch['comiis_reg_bg_head'] == 1 &&($_G['basescript'] == 'member' && CURMODULE == 'logging' || $_G['basescript'] == 'member' && CURMODULE == 'register'))} f_f{elseif $comiis_app_switch['comiis_header_style'] != 1} f_top{/if} cl">
+			<div class="header_z">
+				<!--{if $comiis_head['left']}-->
+					{$comiis_head['left']}
+				<!--{else}-->
+					<a href="javascript:history.back();"><i class="comiis_font">&#xe60d;</i></a>
+				<!--{/if}-->
+			</div>
+			<h2 class="flex">
+				<!--{if $comiis_head['center']}-->
+                    {$comiis_head['center']}
+				<!--{else}-->
+					<!--{if $comiis_app_switch['comiis_appname']}-->{$comiis_app_switch['comiis_appname']}<!--{else}--><img src="{$comiis_app_switch['comiis_logourl']}" class="comiis_noloadimage"><!--{/if}-->
+				<!--{/if}-->
+				<!--{if ($_G['basescript'] == 'forum' || $_G['basescript'] == 'group') && CURMODULE == 'viewthread' && $_G['forum_thread']['author']}-->
+                    <div class="comiis_view_topuser{if $comiis_app_switch['comiis_header_style'] == 0} comiis_view_topuserbg{/if}">
+                        <!--{if $_G['forum_thread']['authorid'] != $_G['uid']}-->
+                            <!--{if helper_access::check_module('follow')}-->
+																<!--{eval require_once("./template/comiis_app/comiis/php/comiis_viewthread.php");}-->
+                                <!--{if !comiis_ckfollow($_G['forum_thread']['authorid']) || !$_G['uid']}-->
+                                     <a{if $_G['uid']} href="home.php?mod=spacecp&ac=follow&op=add&hash={FORMHASH}&fuid=$_G['forum_thread']['authorid']"{/if} class="bg_0 f_f followmod{if !$_G['uid']} comiis_openrebox{/if}"><i class="comiis_font">&#xe610</i>{$comiis_lang['all3']}</a>
+                                    <!--{else}-->
+                                    <a href="home.php?mod=spacecp&ac=follow&op=del&hash={FORMHASH}&fuid=$_G['forum_thread']['authorid']" class="bg_b f_d followmod">{$comiis_lang['all4']}</a>
+                                    <!--{/if}-->
+                            <!--{/if}-->
+                        <!--{/if}-->
+                        <a href="home.php?mod=space&uid={$_G['forum_thread']['authorid']}&do=profile" class="kmimg"><em><img src="<!--{avatar($_G['forum_thread']['authorid'], middle, true)}-->"></em>{$_G['forum_thread']['author']}</a>
+                    </div>
+				<!--{/if}-->			
+			</h2>
+			<div class="header_y">
+				<!--{if $comiis_app_switch['comiis_leftnv'] == 1}--><a href="javascript:;" class="comiis_leftnv_top_key"><i class="comiis_font">&#xe666;</i></a><!--{/if}-->
+				<!--{if $comiis_head['right']}-->
+					{$comiis_head['right']}
+				<!--{else}-->
+					<a href="forum.php?mod=guide&view=hot"><i class="comiis_font">&#xe8c8;</i></a>
+				<!--{/if}-->
+			</div>
+		</div>
+	</div>
+	<!--{if $comiis_isweixin != 1}--><div style="height:48px;"></div><!--{/if}-->
+	<!--{/if}-->	
+	<div class="comiis_bodybox"{if $_COOKIE['comiis_loading']} style="-webkit-transform: translateY(44px);transform: translateY(44px);"{/if}>
+	<!--{hook/global_header_mobile}-->
+	<!--{if CURMODULE != 'index' && CURMODULE != 'guide'}-->
+	<script>
+	if(history.length < 1 || history.length == 1 || document.referrer === ''){
+		$('.header_z').html('{$header_lefts}');
+	}
+	</script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' && CURMODULE == 'forumdisplay' && ($comiis_app_switch['comiis_forum_showstyle']==3 || $comiis_app_switch['comiis_forum_showstyle']==4)}-->
+	<!--{else}-->
+	<!--{eval comiis_load('XxKPUdUoOuXFOfpPVy', '');}-->
+	<!--{/if}-->
